@@ -4,12 +4,6 @@ FROM python:3.11-slim
 # Set the working directory in the container
 WORKDIR /app
 
-# Install curl
-RUN apt-get update && apt-get install -y curl && rm -rf /var/lib/apt/lists/*
-
-# Install Ollama
-RUN curl -fsSL https://ollama.com/install.sh | sh
-
 # Copy the requirements file into the container
 COPY requirements.txt .
 
